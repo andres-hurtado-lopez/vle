@@ -1,0 +1,127 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://VDestino.gd" type="Script" id=1]
+[ext_resource path="res://MyriadBold60.tres" type="DynamicFont" id=2]
+[ext_resource path="res://dropdown.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Shader" id=1]
+
+code = "shader_type canvas_item;
+
+void fragment() {
+    vec4 start = vec4(0.93,0.11,0.14,1.0);
+    vec4 end = vec4(0.76, 0.15, 0.18,1.0);
+    float mpt = (1.0 - UV.y);
+    COLOR = mix(start,end,mpt);
+}"
+
+[sub_resource type="ShaderMaterial" id=2]
+
+render_priority = 0
+shader = SubResource( 1 )
+
+[node name="VDestino" type="ReferenceRect"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Rect" ]
+PlayerNode = null
+Animation = null
+
+[node name="titulo_transporte" type="Label" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_top = 13.0
+margin_bottom = 73.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Transporte"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="iniciar_transporte" type="Button" parent="." index="1"]
+
+material = SubResource( 2 )
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 27.0
+margin_top = -115.0
+margin_right = -31.0
+margin_bottom = -26.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Material", "custom_fonts", "custom_styles" ]
+
+[node name="Label" type="Label" parent="iniciar_transporte" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -483.0
+margin_top = -44.5
+margin_right = 483.0
+margin_bottom = 44.5
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "Iniciar"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "custom_fonts" ]
+
+[node name="Destino" parent="." index="2" instance=ExtResource( 3 )]
+
+margin_left = -300.0
+margin_top = -56.0
+margin_right = 304.0
+margin_bottom = 30.0
+view_label = "Destino"
+
+[node name="Origen" parent="." index="3" instance=ExtResource( 3 )]
+
+view_label = "Origen"
+
+[connection signal="pressed" from="iniciar_transporte" to="." method="_on_iniciar_transporte_pressed"]
+
+

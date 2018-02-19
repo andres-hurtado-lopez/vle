@@ -1,0 +1,2642 @@
+[gd_scene load_steps=55 format=2]
+
+[ext_resource path="res://home.gd" type="Script" id=1]
+[ext_resource path="res://back_servicio.tres" type="Animation" id=2]
+[ext_resource path="res://back_transporte.anim" type="Animation" id=3]
+[ext_resource path="res://go_combustible.anim" type="Animation" id=4]
+[ext_resource path="res://go_descanso.anim" type="Animation" id=5]
+[ext_resource path="res://go_gastos.anim" type="Animation" id=6]
+[ext_resource path="res://go_mecanico.anim" type="Animation" id=7]
+[ext_resource path="res://go_servicio.anim" type="Animation" id=8]
+[ext_resource path="res://go_tranporte.anim" type="Animation" id=9]
+[ext_resource path="res://transporte.png" type="Texture" id=10]
+[ext_resource path="res://mecanico.png" type="Texture" id=11]
+[ext_resource path="res://combustibles.png" type="Texture" id=12]
+[ext_resource path="res://actividades.png" type="Texture" id=13]
+[ext_resource path="res://descanso.png" type="Texture" id=14]
+[ext_resource path="res://mapa.png" type="Texture" id=15]
+[ext_resource path="res://fin_turno.png" type="Texture" id=16]
+[ext_resource path="res://MyriadBold25.tres" type="DynamicFont" id=17]
+[ext_resource path="res://MyriadBold60.tres" type="DynamicFont" id=18]
+[ext_resource path="res://MyriadBold150.tres" type="DynamicFont" id=19]
+[ext_resource path="res://tema_dialogo.tres" type="Theme" id=20]
+[ext_resource path="res://boton_superior.stylebox" type="StyleBox" id=21]
+[ext_resource path="res://grupo_varadas.tres" type="ButtonGroup" id=22]
+[ext_resource path="res://boton_inferior.stylebox" type="StyleBox" id=23]
+[ext_resource path="res://boton.stylebox" type="StyleBox" id=24]
+[ext_resource path="res://VDestino.tscn" type="PackedScene" id=25]
+[ext_resource path="res://grupo_combustible.tres" type="ButtonGroup" id=26]
+[ext_resource path="res://dropdown.tscn" type="PackedScene" id=27]
+[ext_resource path="res://lineedit.stylebox" type="StyleBox" id=28]
+[ext_resource path="res://MyriadRegular60.tres" type="DynamicFont" id=29]
+
+[sub_resource type="Animation" id=19]
+
+resource_name = "back_actividad"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1200, 680 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=1]
+
+resource_name = "back_combustible"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, -690 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=18]
+
+resource_name = "back_datos_actividad"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2400, 680 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+
+resource_name = "back_descanso"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1100, 0 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -1100, -680 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 680 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1200, 680 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+
+resource_name = "go_datos_actividad"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1200, 680 ), Vector2( 2400, 680 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1200, 0 ), Vector2( 2400, 0 ) ]
+}
+
+[sub_resource type="Shader" id=7]
+
+code = "shader_type canvas_item;
+
+void fragment() {
+    vec4 start = vec4(0.93,0.11,0.14,1.0);
+    vec4 end = vec4(0.76, 0.15, 0.18,1.0);
+    float mpt = (1.0 - UV.y);
+    COLOR = mix(start,end,mpt);
+}"
+
+[sub_resource type="ShaderMaterial" id=8]
+
+render_priority = 0
+shader = SubResource( 7 )
+
+[sub_resource type="StyleBoxFlat" id=9]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.652344, 0, 0, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=10]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.65098, 0, 0, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=11]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.65098, 0, 0, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="StyleBoxFlat" id=12]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.65098, 0, 0, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[sub_resource type="Shader" id=13]
+
+code = "shader_type canvas_item;
+
+void fragment() {
+    vec4 start = vec4(0.93,0.11,0.14,1.0);
+    vec4 end = vec4(0.76, 0.15, 0.18,1.0);
+    float mpt = (1.0 - UV.y);
+    COLOR = mix(start,end,mpt);
+}"
+
+[sub_resource type="ShaderMaterial" id=14]
+
+render_priority = 0
+shader = SubResource( 13 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 1
+border_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width" ]
+
+[sub_resource type="StyleBoxFlat" id=16]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 1
+border_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+_sections_unfolded = [ "Border", "Border Width" ]
+
+[sub_resource type="Shader" id=22]
+
+code = "shader_type canvas_item;
+
+void fragment() {
+    vec4 start = vec4(0.50,0.91,0.0,1.0);
+    vec4 end = vec4(0.0, 0.73, 0.0,1.0);
+    float mpt = (1.0 - UV.y);
+    COLOR = mix(start,end,mpt);
+}"
+
+[sub_resource type="ShaderMaterial" id=23]
+
+render_priority = 0
+shader = SubResource( 22 )
+
+[sub_resource type="ShaderMaterial" id=21]
+
+render_priority = 0
+
+[sub_resource type="Shader" id=25]
+
+code = "shader_type canvas_item;
+
+void fragment() {
+    vec4 start = vec4(0.50,0.91,0.0,1.0);
+    vec4 end = vec4(0.0, 0.73, 0.0,1.0);
+    float mpt = (1.0 - UV.y);
+    COLOR = mix(start,end,mpt);
+}"
+
+[sub_resource type="ShaderMaterial" id=26]
+
+render_priority = 0
+shader = SubResource( 25 )
+
+[sub_resource type="StyleBoxFlat" id=27]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+bg_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+draw_center = true
+border_width_left = 0
+border_width_top = 0
+border_width_right = 0
+border_width_bottom = 0
+border_color = Color( 0.8, 0.8, 0.8, 1 )
+border_blend = false
+corner_radius_top_left = 0
+corner_radius_top_right = 0
+corner_radius_bottom_right = 0
+corner_radius_bottom_left = 0
+corner_detail = 8
+expand_margin_left = 0.0
+expand_margin_right = 0.0
+expand_margin_top = 0.0
+expand_margin_bottom = 0.0
+shadow_color = Color( 0, 0, 0, 0.6 )
+shadow_size = 0
+anti_aliasing = true
+anti_aliasing_size = 1
+
+[node name="home" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="0"]
+
+anchor_mode = 0
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="MoveScreens" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/back_actividad = SubResource( 19 )
+anims/back_combustible = SubResource( 1 )
+anims/back_datos_actividad = SubResource( 18 )
+anims/back_descanso = SubResource( 2 )
+anims/back_gastos = SubResource( 3 )
+anims/back_mecanico = SubResource( 4 )
+anims/back_servicio = ExtResource( 2 )
+anims/back_transporte = ExtResource( 3 )
+anims/go_actividad = SubResource( 5 )
+anims/go_combustible = ExtResource( 4 )
+anims/go_datos_actividad = SubResource( 17 )
+anims/go_descanso = ExtResource( 5 )
+anims/go_gastos = ExtResource( 6 )
+anims/go_mecanico = ExtResource( 7 )
+anims/go_servicio = ExtResource( 8 )
+anims/go_time_transporte = SubResource( 6 )
+anims/go_transporte = ExtResource( 9 )
+blend_times = [  ]
+
+[node name="VPrincipal" type="ReferenceRect" parent="." index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="transporte" type="TextureButton" parent="VPrincipal" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 86.0
+margin_top = 59.0
+margin_right = 286.0
+margin_bottom = 259.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 10 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="mecanico" type="TextureButton" parent="VPrincipal" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 396.0
+margin_top = 59.0
+margin_right = 596.0
+margin_bottom = 259.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="combustible" type="TextureButton" parent="VPrincipal" index="2"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 686.0
+margin_top = 59.0
+margin_right = 886.0
+margin_bottom = 259.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 12 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="actividades" type="TextureButton" parent="VPrincipal" index="3"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 86.0
+margin_top = 319.0
+margin_right = 286.0
+margin_bottom = 519.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="descanso" type="TextureButton" parent="VPrincipal" index="4"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 396.0
+margin_top = 319.0
+margin_right = 596.0
+margin_bottom = 519.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 14 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="gastos" type="TextureButton" parent="VPrincipal" index="5"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 686.0
+margin_top = 319.0
+margin_right = 886.0
+margin_bottom = 519.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 15 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="fin_turno" type="TextureButton" parent="VPrincipal" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 848.0
+margin_top = 3.0
+margin_right = 1012.0
+margin_bottom = 74.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 16 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Textures" ]
+
+[node name="Label" type="Label" parent="VPrincipal" index="7"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 122.0
+margin_top = 271.0
+margin_right = 250.0
+margin_bottom = 296.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Transporte"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label2" type="Label" parent="VPrincipal" index="8"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 442.0
+margin_top = 271.0
+margin_right = 557.0
+margin_bottom = 296.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Mecánico"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label3" type="Label" parent="VPrincipal" index="9"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 716.0
+margin_top = 271.0
+margin_right = 860.0
+margin_bottom = 296.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Combustible"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label4" type="Label" parent="VPrincipal" index="10"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 749.0
+margin_top = 528.0
+margin_right = 831.0
+margin_bottom = 553.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Gastos"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label5" type="Label" parent="VPrincipal" index="11"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 445.0
+margin_top = 528.0
+margin_right = 554.0
+margin_bottom = 553.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Descanso"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label6" type="Label" parent="VPrincipal" index="12"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 135.0
+margin_top = 528.0
+margin_right = 244.0
+margin_bottom = 553.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 17 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Actividad"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="VTransporte" type="ReferenceRect" parent="." index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2400.0
+margin_top = 2.0
+margin_right = 3424.0
+margin_bottom = 578.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="titulo_transporte" type="Label" parent="VTransporte" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 0.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Transporte"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="tiempo_transporte" type="Label" parent="VTransporte" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -75.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
+text = "00:00:00"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="detener_transporte" type="Button" parent="VTransporte" index="2"]
+
+material = SubResource( 8 )
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 27.0
+margin_top = -115.0
+margin_right = -31.0
+margin_bottom = -26.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 18 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Material", "custom_fonts", "custom_styles" ]
+
+[node name="Label" type="Label" parent="VTransporte/detener_transporte" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -483.0
+margin_top = -44.5
+margin_right = 483.0
+margin_bottom = 44.5
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 20 )
+custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+text = "Detener"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Theme", "custom_colors" ]
+
+[node name="timer_transporte" type="Timer" parent="VTransporte" index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="VMecanico" type="ReferenceRect" parent="." index="4"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 680.0
+margin_right = 1024.0
+margin_bottom = 1256.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="titulo_mecanico" type="Label" parent="VMecanico" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -86.0
+margin_top = -102.0
+margin_right = 512.0
+margin_bottom = -42.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Tiempo Espera"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="tiempo_espera_mecanico" type="Label" parent="VMecanico" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.0
+margin_top = 28.0
+margin_right = 485.0
+margin_bottom = 178.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
+text = "00:00:00"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VMecanico" index="2"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -441.0
+margin_top = -177.0
+margin_right = -141.0
+margin_bottom = 223.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 0
+alignment = 0
+_sections_unfolded = [ "Theme", "custom_constants" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="varada_llanta" type="Button" parent="VMecanico/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 20 )
+custom_styles/hover = ExtResource( 21 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = ExtResource( 21 )
+custom_styles/normal = ExtResource( 21 )
+toggle_mode = true
+enabled_focus_mode = 0
+shortcut = null
+group = ExtResource( 22 )
+text = "Varada Llanta"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="varada_mecanica" type="Button" parent="VMecanico/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_right = 300.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 300, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 20 )
+custom_styles/pressed = SubResource( 10 )
+toggle_mode = true
+enabled_focus_mode = 0
+shortcut = null
+group = ExtResource( 22 )
+text = "Varada Mecánica"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
+
+[node name="varada_electrica" type="Button" parent="VMecanico/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 200.0
+margin_right = 300.0
+margin_bottom = 300.0
+rect_min_size = Vector2( 300, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 20 )
+custom_styles/pressed = SubResource( 11 )
+toggle_mode = true
+enabled_focus_mode = 0
+shortcut = null
+group = ExtResource( 22 )
+text = "Varada Eléctrica"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="varada_hidraulica" type="Button" parent="VMecanico/VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 300.0
+margin_right = 300.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 300, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 20 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = ExtResource( 23 )
+custom_styles/normal = ExtResource( 23 )
+toggle_mode = true
+enabled_focus_mode = 0
+shortcut = null
+group = ExtResource( 22 )
+text = "Varada Hidráulica"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
+
+[node name="regresar_mecanico" type="Button" parent="VMecanico" index="3"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -478.0
+margin_top = -261.0
+margin_right = -327.0
+margin_bottom = -218.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 20 )
+custom_styles/hover = ExtResource( 24 )
+custom_styles/pressed = ExtResource( 24 )
+custom_styles/normal = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Regresar"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_styles" ]
+
+[node name="timer_mecanico" type="Timer" parent="VMecanico" index="4"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="llegada_mecanico" type="Button" parent="VMecanico" index="5"]
+
+material = SubResource( 14 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -81.0
+margin_top = 173.0
+margin_right = 474.0
+margin_bottom = 257.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Material", "Theme" ]
+
+[node name="Label" type="Label" parent="VMecanico/llegada_mecanico" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Llegada Mecánico"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Theme", "custom_colors" ]
+
+[node name="VServicioMecanico" type="ReferenceRect" parent="." index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 1400.0
+margin_right = 1024.0
+margin_bottom = 1976.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="titulo_servicio" type="Label" parent="VServicioMecanico" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -252.0
+margin_right = 512.0
+margin_bottom = -192.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Servicio"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="tiempo_servicio" type="Label" parent="VServicioMecanico" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -75.0
+margin_right = 512.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
+text = "00:00:00"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="detener_servicio" type="Button" parent="VServicioMecanico" index="2"]
+
+material = SubResource( 8 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -483.0
+margin_top = 135.0
+margin_right = 483.0
+margin_bottom = 224.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 18 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Material", "custom_fonts", "custom_styles" ]
+
+[node name="Label" type="Label" parent="VServicioMecanico/detener_servicio" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -483.0
+margin_top = -44.5
+margin_right = 483.0
+margin_bottom = 44.5
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Detener"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Theme", "custom_colors" ]
+
+[node name="timer_servicio" type="Timer" parent="VServicioMecanico" index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="VDestino" parent="." index="6" instance=ExtResource( 25 )]
+
+margin_left = 1200.0
+margin_right = 2224.0
+PlayerNode = NodePath("../MoveScreens")
+Animation = "go_time_transporte"
+
+[node name="VCombustible" type="ReferenceRect" parent="." index="7"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = -690.0
+margin_right = 1024.0
+margin_bottom = -114.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="titulo_cambustible" type="Label" parent="VCombustible" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -243.0
+margin_top = -247.0
+margin_right = 355.0
+margin_bottom = -187.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Carga Combustible"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="titulo_cantidad" type="Label" parent="VCombustible" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -102.0
+margin_top = -111.0
+margin_right = 143.0
+margin_bottom = -51.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Cantidad"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="cantidad" type="LineEdit" parent="VCombustible" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 689.0
+margin_top = 178.0
+margin_right = 948.0
+margin_bottom = 225.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 1
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = SubResource( 15 )
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+align = 1
+focus_mode = 1
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Theme", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VCombustible" index="3"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -469.0
+margin_top = -97.0
+margin_right = -169.0
+margin_bottom = 103.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 0
+alignment = 0
+_sections_unfolded = [ "Theme", "custom_constants" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="tanqueo_patio" type="Button" parent="VCombustible/VBoxContainer2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 300.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 300, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 20 )
+custom_styles/hover = ExtResource( 21 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = ExtResource( 21 )
+custom_styles/normal = ExtResource( 21 )
+toggle_mode = true
+enabled_focus_mode = 0
+shortcut = null
+group = ExtResource( 26 )
+text = "Tanqueo Patio"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[node name="tanqueo_campo" type="Button" parent="VCombustible/VBoxContainer2" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 100.0
+margin_right = 300.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 300, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 20 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = SubResource( 12 )
+custom_styles/focus = ExtResource( 23 )
+custom_styles/normal = ExtResource( 23 )
+toggle_mode = true
+enabled_focus_mode = 0
+shortcut = null
+group = ExtResource( 26 )
+text = "Tanqueo Campo"
+flat = false
+clip_text = true
+align = 1
+_sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
+
+[node name="tiempo_cambustible" type="Label" parent="VCombustible" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = 397.0
+margin_top = -5.0
+margin_right = -49.0
+margin_bottom = 145.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
+text = "00:00:00"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="Fin Tanqueo" type="Button" parent="VCombustible" index="5"]
+
+material = SubResource( 14 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -109.0
+margin_top = 163.0
+margin_right = 446.0
+margin_bottom = 247.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Material", "Theme" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="VCombustible/Fin Tanqueo" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 20 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Fin Tanqueo"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Theme", "custom_colors" ]
+
+[node name="timer_combustible" type="Timer" parent="VCombustible" index="6"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="VDescanso" type="ReferenceRect" parent="." index="8"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1100.0
+margin_right = -76.0
+margin_bottom = 576.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="titulo_descanso" type="Label" parent="VDescanso" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -231.0
+margin_right = 512.0
+margin_bottom = -171.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Descanso"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="tiempo_descanso" type="Label" parent="VDescanso" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -75.0
+margin_right = 512.0
+margin_bottom = 75.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 19 )
+custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
+text = "00:00:00"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="detener_descanso" type="Button" parent="VDescanso" index="2"]
+
+material = SubResource( 8 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -483.0
+margin_top = 165.0
+margin_right = 483.0
+margin_bottom = 254.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 18 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Material", "custom_fonts", "custom_styles" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="VDescanso/detener_descanso" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -483.0
+margin_top = -44.5
+margin_right = 483.0
+margin_bottom = 44.5
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 20 )
+custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+text = "Detener"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Theme", "custom_colors" ]
+
+[node name="timer_descanso" type="Timer" parent="VDescanso" index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="VGastos" type="ReferenceRect" parent="." index="9"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -1100.0
+margin_top = -680.0
+margin_right = -76.0
+margin_bottom = -83.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VGastos" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 327.0
+margin_top = 328.0
+margin_right = 775.0
+margin_bottom = 389.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="titulo_valor" type="Label" parent="VGastos/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 144.0
+margin_bottom = 60.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Valor"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="valor" type="LineEdit" parent="VGastos/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 148.0
+margin_right = 448.0
+margin_bottom = 61.0
+rect_min_size = Vector2( 300, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = SubResource( 16 )
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="titulo_gastos" type="Label" parent="VGastos" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -248.5
+margin_right = 512.0
+margin_bottom = -188.5
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Gastos"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="regresar_gastos" type="Button" parent="VGastos" index="2"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -451.0
+margin_top = -275.5
+margin_right = -300.0
+margin_bottom = -232.5
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 20 )
+custom_styles/hover = ExtResource( 24 )
+custom_styles/pressed = ExtResource( 24 )
+custom_styles/normal = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Regresar"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_styles" ]
+
+[node name="registrar_gasto" type="Button" parent="VGastos" index="3"]
+
+material = SubResource( 8 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -483.0
+margin_top = 142.5
+margin_right = 483.0
+margin_bottom = 231.5
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 18 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Material", "custom_fonts", "custom_styles" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="VGastos/registrar_gasto" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -483.0
+margin_top = -44.5
+margin_right = 483.0
+margin_bottom = 44.5
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 20 )
+custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+text = "Registrar"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "Theme", "custom_colors" ]
+
+[node name="concepto_gasto" parent="VGastos" index="4" instance=ExtResource( 27 )]
+
+margin_left = -300.0
+margin_top = -130.5
+margin_right = 304.0
+margin_bottom = -44.5
+view_label = "Concepto"
+
+[node name="VActvidad" type="ReferenceRect" parent="." index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1200.0
+margin_top = 680.0
+margin_right = 2224.0
+margin_bottom = 1277.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="regresar_actividad" type="Button" parent="VActvidad" index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -459.0
+margin_top = -271.5
+margin_right = -308.0
+margin_bottom = -228.5
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = ExtResource( 20 )
+custom_styles/hover = ExtResource( 24 )
+custom_styles/pressed = ExtResource( 24 )
+custom_styles/normal = ExtResource( 24 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Regresar"
+flat = false
+align = 1
+_sections_unfolded = [ "Theme", "custom_colors", "custom_styles" ]
+
+[node name="buscar_actividad" type="LineEdit" parent="VActvidad" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -467.0
+margin_top = -99.5
+margin_right = 464.0
+margin_bottom = -25.5
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_styles/normal = ExtResource( 28 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+focus_mode = 2
+context_menu_enabled = true
+placeholder_text = "buscar actividad u orden"
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Placeholder", "custom_colors", "custom_fonts" ]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VActvidad" index="2"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = -300.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+scroll_horizontal_enabled = true
+scroll_horizontal = 0
+scroll_vertical_enabled = true
+scroll_vertical = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="GridContainer" type="GridContainer" parent="VActvidad/ScrollContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1028.0
+margin_bottom = 626.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+columns = 2
+
+[node name="PActividad" type="Panel" parent="VActvidad/ScrollContainer/GridContainer" index="0"]
+
+editor/display_folded = true
+material = SubResource( 23 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 512.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 512, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Material", "Rect", "custom_styles" ]
+
+[node name="Label" type="Label" parent="VActvidad/ScrollContainer/GridContainer/PActividad" index="0"]
+
+material = SubResource( 21 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+text = "Actividad"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "custom_colors", "custom_fonts" ]
+
+[node name="POrden" type="Panel" parent="VActvidad/ScrollContainer/GridContainer" index="1"]
+
+editor/display_folded = true
+material = SubResource( 26 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_right = 1028.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 512, 50 )
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Material", "Rect", "custom_styles" ]
+
+[node name="Label" type="Label" parent="VActvidad/ScrollContainer/GridContainer/POrden" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+text = "Orden"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Material", "custom_colors", "custom_fonts" ]
+
+[node name="Label2" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 54.0
+margin_right = 512.0
+margin_bottom = 114.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "Arado Mecanico"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label3" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 54.0
+margin_right = 1028.0
+margin_bottom = 114.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label4" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 118.0
+margin_right = 512.0
+margin_bottom = 178.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label5" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 118.0
+margin_right = 1028.0
+margin_bottom = 178.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label6" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 182.0
+margin_right = 512.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label7" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 182.0
+margin_right = 1028.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label8" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 246.0
+margin_right = 512.0
+margin_bottom = 306.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label9" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 246.0
+margin_right = 1028.0
+margin_bottom = 306.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label10" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 310.0
+margin_right = 512.0
+margin_bottom = 370.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label11" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 310.0
+margin_right = 1028.0
+margin_bottom = 370.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label12" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="12"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 374.0
+margin_right = 512.0
+margin_bottom = 434.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label13" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="13"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 374.0
+margin_right = 1028.0
+margin_bottom = 434.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label14" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="14"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 438.0
+margin_right = 512.0
+margin_bottom = 498.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label15" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="15"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 438.0
+margin_right = 1028.0
+margin_bottom = 498.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label16" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="16"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 502.0
+margin_right = 512.0
+margin_bottom = 562.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label17" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="17"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 502.0
+margin_right = 1028.0
+margin_bottom = 562.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label18" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="18"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 566.0
+margin_right = 512.0
+margin_bottom = 626.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Label19" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="19"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 516.0
+margin_top = 566.0
+margin_right = 1028.0
+margin_bottom = 626.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_styles/normal = SubResource( 27 )
+custom_fonts/font = ExtResource( 29 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "345235"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="dropdown" parent="VActvidad" index="3" instance=ExtResource( 27 )]
+
+margin_left = -469.0
+margin_top = -201.5
+margin_right = 135.0
+margin_bottom = -115.5
+view_label = "Lote"
+
+[node name="VDatosActividad" type="ReferenceRect" parent="." index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2400.0
+margin_top = 680.0
+margin_right = 3424.0
+margin_bottom = 1277.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[connection signal="pressed" from="VPrincipal/transporte" to="." method="_on_transporte_pressed"]
+
+[connection signal="pressed" from="VPrincipal/mecanico" to="." method="_on_mecanico_pressed"]
+
+[connection signal="pressed" from="VPrincipal/combustible" to="." method="_on_combustible_pressed"]
+
+[connection signal="pressed" from="VPrincipal/actividades" to="." method="_on_actividades_pressed"]
+
+[connection signal="pressed" from="VPrincipal/descanso" to="." method="_on_descanso_pressed"]
+
+[connection signal="pressed" from="VPrincipal/gastos" to="." method="_on_gastos_pressed"]
+
+[connection signal="pressed" from="VPrincipal/fin_turno" to="." method="_on_fin_turno_pressed"]
+
+[connection signal="pressed" from="VTransporte/detener_transporte" to="." method="_on_detener_transporte_pressed"]
+
+[connection signal="timeout" from="VTransporte/timer_transporte" to="." method="_on_timer_transporte_timeout"]
+
+[connection signal="pressed" from="VMecanico/regresar_mecanico" to="." method="_on_regresar_mecanico_pressed"]
+
+[connection signal="timeout" from="VMecanico/timer_mecanico" to="." method="_on_timer_mecanico_timeout"]
+
+[connection signal="pressed" from="VMecanico/llegada_mecanico" to="." method="_on_llegada_mecanico_pressed"]
+
+[connection signal="pressed" from="VServicioMecanico/detener_servicio" to="." method="_on_detener_servicio_pressed"]
+
+[connection signal="timeout" from="VServicioMecanico/timer_servicio" to="." method="_on_timer_servicio_timeout"]
+
+[connection signal="pressed" from="VCombustible/Fin Tanqueo" to="." method="_on_Fin_Tanqueo_pressed"]
+
+[connection signal="timeout" from="VCombustible/timer_combustible" to="." method="_on_timer_combustible_timeout"]
+
+[connection signal="pressed" from="VDescanso/detener_descanso" to="." method="_on_detener_descanso_pressed"]
+
+[connection signal="timeout" from="VDescanso/timer_descanso" to="." method="_on_timer_descanso_timeout"]
+
+[connection signal="pressed" from="VGastos/regresar_gastos" to="." method="_on_regresar_gastos_pressed"]
+
+[connection signal="pressed" from="VGastos/registrar_gasto" to="." method="_on_registrar_gasto_pressed"]
+
+[connection signal="pressed" from="VActvidad/regresar_actividad" to="." method="_on_regresar_actividad_pressed"]
+
+
