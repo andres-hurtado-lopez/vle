@@ -11,7 +11,10 @@ var ril = null
 func _ready():
 
     TranslationServer.set_locale(OS.get_locale().left(2))
-    #TranslationServer.set_locale("en")
+
+    global = get_node('/root/global')
+    db.write_key('ubicaciones', ['Pereira','Chinchina','Buenaventura'])
+
 
     var config = ConfigFile.new()
     var err = config.load('user://settings.cfg')

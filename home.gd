@@ -13,8 +13,6 @@ var contador_descanso;
 
 func _ready():
     db = get_node('/root/db')
-    global = get_node('/root/global')
-    db.write_key('ubicaciones', ['Pereira','Chinchina','Buenaventura'])
     $VGastos/concepto_gasto.populate(['Peaje','Combustible'])
 
 #func _process(delta):
