@@ -10,8 +10,8 @@ var ril = null
 
 func _ready():
 
-    #TranslationServer.set_locale(OS.get_locale().left(2))
-    TranslationServer.set_locale("en")
+    TranslationServer.set_locale(OS.get_locale().left(2))
+    #TranslationServer.set_locale("en")
 
     var config = ConfigFile.new()
     var err = config.load('user://settings.cfg')

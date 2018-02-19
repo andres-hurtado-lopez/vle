@@ -24,7 +24,7 @@ void fragment() {
 render_priority = 0
 shader = SubResource( 1 )
 
-[node name="set_system" type="Node"]
+[node name="set_system" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -154,7 +154,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Guardar"
+text = "SAVE"
 flat = false
 align = 1
 _sections_unfolded = [ "custom_fonts", "custom_styles" ]
