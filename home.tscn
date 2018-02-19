@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=57 format=2]
 
 [ext_resource path="res://home.gd" type="Script" id=1]
 [ext_resource path="res://back_servicio.tres" type="Animation" id=2]
@@ -15,22 +15,21 @@
 [ext_resource path="res://actividades.png" type="Texture" id=13]
 [ext_resource path="res://descanso.png" type="Texture" id=14]
 [ext_resource path="res://mapa.png" type="Texture" id=15]
-[ext_resource path="res://fin_turno.png" type="Texture" id=16]
-[ext_resource path="res://MyriadBold25.tres" type="DynamicFont" id=17]
-[ext_resource path="res://MyriadBold60.tres" type="DynamicFont" id=18]
-[ext_resource path="res://MyriadBold150.tres" type="DynamicFont" id=19]
-[ext_resource path="res://tema_dialogo.tres" type="Theme" id=20]
-[ext_resource path="res://boton_superior.stylebox" type="StyleBox" id=21]
-[ext_resource path="res://grupo_varadas.tres" type="ButtonGroup" id=22]
-[ext_resource path="res://boton_inferior.stylebox" type="StyleBox" id=23]
-[ext_resource path="res://boton.stylebox" type="StyleBox" id=24]
-[ext_resource path="res://VDestino.tscn" type="PackedScene" id=25]
-[ext_resource path="res://grupo_combustible.tres" type="ButtonGroup" id=26]
-[ext_resource path="res://dropdown.tscn" type="PackedScene" id=27]
-[ext_resource path="res://lineedit.stylebox" type="StyleBox" id=28]
-[ext_resource path="res://MyriadRegular60.tres" type="DynamicFont" id=29]
+[ext_resource path="res://MyriadBold25.tres" type="DynamicFont" id=16]
+[ext_resource path="res://MyriadBold60.tres" type="DynamicFont" id=17]
+[ext_resource path="res://MyriadBold150.tres" type="DynamicFont" id=18]
+[ext_resource path="res://tema_dialogo.tres" type="Theme" id=19]
+[ext_resource path="res://boton_superior.stylebox" type="StyleBox" id=20]
+[ext_resource path="res://grupo_varadas.tres" type="ButtonGroup" id=21]
+[ext_resource path="res://boton_inferior.stylebox" type="StyleBox" id=22]
+[ext_resource path="res://boton.stylebox" type="StyleBox" id=23]
+[ext_resource path="res://VDestino.tscn" type="PackedScene" id=24]
+[ext_resource path="res://grupo_combustible.tres" type="ButtonGroup" id=25]
+[ext_resource path="res://dropdown.tscn" type="PackedScene" id=26]
+[ext_resource path="res://lineedit.stylebox" type="StyleBox" id=27]
+[ext_resource path="res://MyriadRegular60.tres" type="DynamicFont" id=28]
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=1]
 
 resource_name = "back_actividad"
 length = 0.5
@@ -49,9 +48,8 @@ tracks/0/keys = {
 "values": [ Vector2( 1200, 680 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 
-resource_name = "back_combustible"
 length = 0.5
 loop = false
 step = 0.1
@@ -68,7 +66,7 @@ tracks/0/keys = {
 "values": [ Vector2( 0, -690 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=3]
 
 resource_name = "back_datos_actividad"
 length = 0.5
@@ -87,43 +85,6 @@ tracks/0/keys = {
 "values": [ Vector2( 2400, 680 ), Vector2( 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-
-resource_name = "back_descanso"
-length = 0.5
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -1100, 0 ), Vector2( 0, 0 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-
-length = 0.5
-loop = false
-step = 0.1
-tracks/0/type = "value"
-tracks/0/path = NodePath("Camera2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -1100, -680 ), Vector2( 0, 0 ) ]
-}
-
 [sub_resource type="Animation" id=4]
 
 length = 0.5
@@ -139,7 +100,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 680 ), Vector2( 0, 0 ) ]
+"values": [ Vector2( -1100, 0 ), Vector2( 0, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -157,10 +118,46 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
+"values": [ Vector2( -1100, -680 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 680 ), Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 1200, 680 ) ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=8]
 
 resource_name = "go_datos_actividad"
 length = 0.5
@@ -179,7 +176,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1200, 680 ), Vector2( 2400, 680 ) ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=9]
 
 length = 0.5
 loop = false
@@ -197,7 +194,31 @@ tracks/0/keys = {
 "values": [ Vector2( 1200, 0 ), Vector2( 2400, 0 ) ]
 }
 
-[sub_resource type="Shader" id=7]
+[sub_resource type="StyleBoxEmpty" id=10]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
+
+[sub_resource type="Shader" id=11]
+
+code = "shader_type canvas_item;
+
+
+void fragment() {
+    vec4 start = vec4(0.78,0.78,0.78,1.0);
+    vec4 end = vec4(0.66, 0.66, 0.66,1.0);
+    float mpt = (1.0 - UV.y);
+    COLOR = mix(start,end,mpt);
+}"
+
+[sub_resource type="ShaderMaterial" id=12]
+
+render_priority = 0
+shader = SubResource( 11 )
+
+[sub_resource type="Shader" id=13]
 
 code = "shader_type canvas_item;
 
@@ -208,12 +229,12 @@ void fragment() {
     COLOR = mix(start,end,mpt);
 }"
 
-[sub_resource type="ShaderMaterial" id=8]
+[sub_resource type="ShaderMaterial" id=14]
 
 render_priority = 0
-shader = SubResource( 7 )
+shader = SubResource( 13 )
 
-[sub_resource type="StyleBoxFlat" id=9]
+[sub_resource type="StyleBoxFlat" id=15]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -241,7 +262,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=10]
+[sub_resource type="StyleBoxFlat" id=16]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -269,7 +290,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=11]
+[sub_resource type="StyleBoxFlat" id=17]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -297,7 +318,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="StyleBoxFlat" id=12]
+[sub_resource type="StyleBoxFlat" id=18]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -325,7 +346,7 @@ shadow_size = 0
 anti_aliasing = true
 anti_aliasing_size = 1
 
-[sub_resource type="Shader" id=13]
+[sub_resource type="Shader" id=19]
 
 code = "shader_type canvas_item;
 
@@ -336,12 +357,12 @@ void fragment() {
     COLOR = mix(start,end,mpt);
 }"
 
-[sub_resource type="ShaderMaterial" id=14]
+[sub_resource type="ShaderMaterial" id=20]
 
 render_priority = 0
-shader = SubResource( 13 )
+shader = SubResource( 19 )
 
-[sub_resource type="StyleBoxFlat" id=15]
+[sub_resource type="StyleBoxFlat" id=21]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -370,7 +391,7 @@ anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Border", "Border Width" ]
 
-[sub_resource type="StyleBoxFlat" id=16]
+[sub_resource type="StyleBoxFlat" id=22]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -399,7 +420,7 @@ anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Border", "Border Width" ]
 
-[sub_resource type="Shader" id=22]
+[sub_resource type="Shader" id=23]
 
 code = "shader_type canvas_item;
 
@@ -410,16 +431,16 @@ void fragment() {
     COLOR = mix(start,end,mpt);
 }"
 
-[sub_resource type="ShaderMaterial" id=23]
+[sub_resource type="ShaderMaterial" id=24]
 
 render_priority = 0
-shader = SubResource( 22 )
+shader = SubResource( 23 )
 
-[sub_resource type="ShaderMaterial" id=21]
+[sub_resource type="ShaderMaterial" id=25]
 
 render_priority = 0
 
-[sub_resource type="Shader" id=25]
+[sub_resource type="Shader" id=26]
 
 code = "shader_type canvas_item;
 
@@ -430,12 +451,12 @@ void fragment() {
     COLOR = mix(start,end,mpt);
 }"
 
-[sub_resource type="ShaderMaterial" id=26]
+[sub_resource type="ShaderMaterial" id=27]
 
 render_priority = 0
-shader = SubResource( 25 )
+shader = SubResource( 26 )
 
-[sub_resource type="StyleBoxFlat" id=27]
+[sub_resource type="StyleBoxFlat" id=28]
 
 content_margin_left = -1.0
 content_margin_right = -1.0
@@ -500,28 +521,27 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/back_actividad = SubResource( 19 )
-anims/back_combustible = SubResource( 1 )
-anims/back_datos_actividad = SubResource( 18 )
-anims/back_descanso = SubResource( 2 )
-anims/back_gastos = SubResource( 3 )
-anims/back_mecanico = SubResource( 4 )
+anims/back_actividad = SubResource( 1 )
+anims/back_combustible = SubResource( 2 )
+anims/back_datos_actividad = SubResource( 3 )
+anims/back_descanso = SubResource( 4 )
+anims/back_gastos = SubResource( 5 )
+anims/back_mecanico = SubResource( 6 )
 anims/back_servicio = ExtResource( 2 )
 anims/back_transporte = ExtResource( 3 )
-anims/go_actividad = SubResource( 5 )
+anims/go_actividad = SubResource( 7 )
 anims/go_combustible = ExtResource( 4 )
-anims/go_datos_actividad = SubResource( 17 )
+anims/go_datos_actividad = SubResource( 8 )
 anims/go_descanso = ExtResource( 5 )
 anims/go_gastos = ExtResource( 6 )
 anims/go_mecanico = ExtResource( 7 )
 anims/go_servicio = ExtResource( 8 )
-anims/go_time_transporte = SubResource( 6 )
+anims/go_time_transporte = SubResource( 9 )
 anims/go_transporte = ExtResource( 9 )
 blend_times = [  ]
 
 [node name="VPrincipal" type="ReferenceRect" parent="." index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -685,7 +705,7 @@ expand = true
 stretch_mode = 5
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="fin_turno" type="TextureButton" parent="VPrincipal" index="6"]
+[node name="fin_turno" type="Button" parent="VPrincipal" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -701,14 +721,50 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+custom_styles/normal = SubResource( 10 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-texture_normal = ExtResource( 16 )
-expand = true
-stretch_mode = 5
-_sections_unfolded = [ "Textures" ]
+flat = false
+align = 1
+_sections_unfolded = [ "Textures", "custom_styles" ]
+
+[node name="Panel" type="Panel" parent="VPrincipal/fin_turno" index="0"]
+
+material = SubResource( 12 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Material", "custom_styles" ]
+
+[node name="Label" type="Label" parent="VPrincipal/fin_turno" index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -54.0
+margin_top = -12.5
+margin_right = 54.0
+margin_bottom = 12.5
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 16 )
+text = "Fin Turno"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 [node name="Label" type="Label" parent="VPrincipal" index="7"]
 
@@ -725,7 +781,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 17 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Transporte"
 percent_visible = 1.0
@@ -748,7 +804,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 17 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Mecánico"
 percent_visible = 1.0
@@ -771,7 +827,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 17 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Combustible"
 percent_visible = 1.0
@@ -794,7 +850,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 17 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Gastos"
 percent_visible = 1.0
@@ -817,7 +873,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 17 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Descanso"
 percent_visible = 1.0
@@ -840,7 +896,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 17 )
+custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Actividad"
 percent_visible = 1.0
@@ -878,7 +934,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Transporte"
 align = 1
@@ -900,7 +956,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
 text = "00:00:00"
 align = 1
@@ -912,7 +968,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="detener_transporte" type="Button" parent="VTransporte" index="2"]
 
-material = SubResource( 8 )
+material = SubResource( 14 )
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -927,7 +983,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -951,7 +1007,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 20 )
+theme = ExtResource( 19 )
 custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
 text = "Detener"
 align = 1
@@ -1000,7 +1056,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Tiempo Espera"
 align = 1
@@ -1024,7 +1080,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
 text = "00:00:00"
 align = 1
@@ -1070,15 +1126,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 20 )
-custom_styles/hover = ExtResource( 21 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = ExtResource( 21 )
-custom_styles/normal = ExtResource( 21 )
+theme = ExtResource( 19 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = ExtResource( 20 )
+custom_styles/normal = ExtResource( 20 )
 toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
-group = ExtResource( 22 )
+group = ExtResource( 21 )
 text = "Varada Llanta"
 flat = false
 align = 1
@@ -1099,12 +1155,12 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 20 )
-custom_styles/pressed = SubResource( 10 )
+theme = ExtResource( 19 )
+custom_styles/pressed = SubResource( 16 )
 toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
-group = ExtResource( 22 )
+group = ExtResource( 21 )
 text = "Varada Mecánica"
 flat = false
 align = 1
@@ -1125,12 +1181,12 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 20 )
-custom_styles/pressed = SubResource( 11 )
+theme = ExtResource( 19 )
+custom_styles/pressed = SubResource( 17 )
 toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
-group = ExtResource( 22 )
+group = ExtResource( 21 )
 text = "Varada Eléctrica"
 flat = false
 align = 1
@@ -1151,15 +1207,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 20 )
-custom_styles/hover = ExtResource( 23 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = ExtResource( 23 )
-custom_styles/normal = ExtResource( 23 )
+theme = ExtResource( 19 )
+custom_styles/hover = ExtResource( 22 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = ExtResource( 22 )
+custom_styles/normal = ExtResource( 22 )
 toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
-group = ExtResource( 22 )
+group = ExtResource( 21 )
 text = "Varada Hidráulica"
 flat = false
 align = 1
@@ -1181,10 +1237,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 20 )
-custom_styles/hover = ExtResource( 24 )
-custom_styles/pressed = ExtResource( 24 )
-custom_styles/normal = ExtResource( 24 )
+theme = ExtResource( 19 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 23 )
+custom_styles/normal = ExtResource( 23 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1204,7 +1260,7 @@ autostart = false
 
 [node name="llegada_mecanico" type="Button" parent="VMecanico" index="5"]
 
-material = SubResource( 14 )
+material = SubResource( 20 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1238,7 +1294,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 20 )
+theme = ExtResource( 19 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Llegada Mecánico"
 align = 1
@@ -1280,7 +1336,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Servicio"
 align = 1
@@ -1304,7 +1360,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
 text = "00:00:00"
 align = 1
@@ -1316,7 +1372,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="detener_servicio" type="Button" parent="VServicioMecanico" index="2"]
 
-material = SubResource( 8 )
+material = SubResource( 14 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1331,7 +1387,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1355,7 +1411,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 20 )
+theme = ExtResource( 19 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Detener"
 align = 1
@@ -1372,7 +1428,7 @@ wait_time = 1.0
 one_shot = false
 autostart = false
 
-[node name="VDestino" parent="." index="6" instance=ExtResource( 25 )]
+[node name="VDestino" parent="." index="6" instance=ExtResource( 24 )]
 
 margin_left = 1200.0
 margin_right = 2224.0
@@ -1411,7 +1467,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Carga Combustible"
 align = 1
@@ -1435,7 +1491,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Cantidad"
 align = 1
@@ -1460,8 +1516,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = SubResource( 15 )
-custom_fonts/font = ExtResource( 18 )
+custom_styles/normal = SubResource( 21 )
+custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 align = 1
 focus_mode = 1
@@ -1508,15 +1564,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 20 )
-custom_styles/hover = ExtResource( 21 )
-custom_styles/pressed = SubResource( 9 )
-custom_styles/focus = ExtResource( 21 )
-custom_styles/normal = ExtResource( 21 )
+theme = ExtResource( 19 )
+custom_styles/hover = ExtResource( 20 )
+custom_styles/pressed = SubResource( 15 )
+custom_styles/focus = ExtResource( 20 )
+custom_styles/normal = ExtResource( 20 )
 toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
-group = ExtResource( 26 )
+group = ExtResource( 25 )
 text = "Tanqueo Patio"
 flat = false
 align = 1
@@ -1537,15 +1593,15 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 20 )
-custom_styles/hover = ExtResource( 23 )
-custom_styles/pressed = SubResource( 12 )
-custom_styles/focus = ExtResource( 23 )
-custom_styles/normal = ExtResource( 23 )
+theme = ExtResource( 19 )
+custom_styles/hover = ExtResource( 22 )
+custom_styles/pressed = SubResource( 18 )
+custom_styles/focus = ExtResource( 22 )
+custom_styles/normal = ExtResource( 22 )
 toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
-group = ExtResource( 26 )
+group = ExtResource( 25 )
 text = "Tanqueo Campo"
 flat = false
 clip_text = true
@@ -1567,7 +1623,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
 text = "00:00:00"
 align = 1
@@ -1579,7 +1635,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="Fin Tanqueo" type="Button" parent="VCombustible" index="5"]
 
-material = SubResource( 14 )
+material = SubResource( 20 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1616,7 +1672,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 20 )
+theme = ExtResource( 19 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "Fin Tanqueo"
 align = 1
@@ -1665,7 +1721,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Descanso"
 align = 1
@@ -1689,7 +1745,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 19 )
+custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
 text = "00:00:00"
 align = 1
@@ -1701,7 +1757,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="detener_descanso" type="Button" parent="VDescanso" index="2"]
 
-material = SubResource( 8 )
+material = SubResource( 14 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1716,7 +1772,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1743,7 +1799,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 20 )
+theme = ExtResource( 19 )
 custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
 text = "Detener"
 align = 1
@@ -1811,7 +1867,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Valor"
 align = 1
@@ -1836,8 +1892,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = SubResource( 16 )
-custom_fonts/font = ExtResource( 18 )
+custom_styles/normal = SubResource( 22 )
+custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 focus_mode = 2
 context_menu_enabled = true
@@ -1862,7 +1918,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Gastos"
 align = 1
@@ -1887,10 +1943,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 20 )
-custom_styles/hover = ExtResource( 24 )
-custom_styles/pressed = ExtResource( 24 )
-custom_styles/normal = ExtResource( 24 )
+theme = ExtResource( 19 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 23 )
+custom_styles/normal = ExtResource( 23 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -1903,7 +1959,7 @@ _sections_unfolded = [ "Theme", "custom_colors", "custom_styles" ]
 
 [node name="registrar_gasto" type="Button" parent="VGastos" index="3"]
 
-material = SubResource( 8 )
+material = SubResource( 14 )
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1918,7 +1974,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -1945,7 +2001,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 20 )
+theme = ExtResource( 19 )
 custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
 text = "Registrar"
 align = 1
@@ -1955,7 +2011,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Material", "Theme", "custom_colors" ]
 
-[node name="concepto_gasto" parent="VGastos" index="4" instance=ExtResource( 27 )]
+[node name="concepto_gasto" parent="VGastos" index="4" instance=ExtResource( 26 )]
 
 margin_left = -300.0
 margin_top = -130.5
@@ -1996,10 +2052,10 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = ExtResource( 20 )
-custom_styles/hover = ExtResource( 24 )
-custom_styles/pressed = ExtResource( 24 )
-custom_styles/normal = ExtResource( 24 )
+theme = ExtResource( 19 )
+custom_styles/hover = ExtResource( 23 )
+custom_styles/pressed = ExtResource( 23 )
+custom_styles/normal = ExtResource( 23 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 toggle_mode = false
 enabled_focus_mode = 2
@@ -2026,8 +2082,8 @@ mouse_filter = 0
 mouse_default_cursor_shape = 1
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = ExtResource( 28 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = ExtResource( 27 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 focus_mode = 2
 context_menu_enabled = true
@@ -2078,7 +2134,7 @@ columns = 2
 [node name="PActividad" type="Panel" parent="VActvidad/ScrollContainer/GridContainer" index="0"]
 
 editor/display_folded = true
-material = SubResource( 23 )
+material = SubResource( 24 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -2095,7 +2151,7 @@ _sections_unfolded = [ "Material", "Rect", "custom_styles" ]
 
 [node name="Label" type="Label" parent="VActvidad/ScrollContainer/GridContainer/PActividad" index="0"]
 
-material = SubResource( 21 )
+material = SubResource( 25 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -2105,7 +2161,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 text = "Actividad"
 percent_visible = 1.0
 lines_skipped = 0
@@ -2115,7 +2171,7 @@ _sections_unfolded = [ "Material", "custom_colors", "custom_fonts" ]
 [node name="POrden" type="Panel" parent="VActvidad/ScrollContainer/GridContainer" index="1"]
 
 editor/display_folded = true
-material = SubResource( 26 )
+material = SubResource( 27 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -2142,7 +2198,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 17 )
 text = "Orden"
 percent_visible = 1.0
 lines_skipped = 0
@@ -2163,8 +2219,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "Arado Mecanico"
 percent_visible = 1.0
@@ -2187,8 +2243,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2210,8 +2266,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2234,8 +2290,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2257,8 +2313,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2281,8 +2337,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2304,8 +2360,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2328,8 +2384,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2351,8 +2407,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2375,8 +2431,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2398,8 +2454,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2422,8 +2478,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2445,8 +2501,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2469,8 +2525,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2492,8 +2548,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2516,8 +2572,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2539,8 +2595,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2563,8 +2619,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_styles/normal = SubResource( 27 )
-custom_fonts/font = ExtResource( 29 )
+custom_styles/normal = SubResource( 28 )
+custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "345235"
 percent_visible = 1.0
@@ -2572,7 +2628,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="dropdown" parent="VActvidad" index="3" instance=ExtResource( 27 )]
+[node name="dropdown" parent="VActvidad" index="3" instance=ExtResource( 26 )]
 
 margin_left = -469.0
 margin_top = -201.5

@@ -30,7 +30,7 @@ window/stretch/aspect="keep_height"
 
 [locale]
 
-locale_filter=[ 0, [ "en", "es", "ru", "th" ] ]
+locale_filter=[ 1, [ "en", "es", "ru", "th" ] ]
 
 [rendering]
 
