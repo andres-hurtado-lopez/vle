@@ -344,10 +344,10 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 custom_styles/panel = SubResource( 3 )
-popup_exclusive = false
+popup_exclusive = true
 window_title = ""
 resizable = false
-_sections_unfolded = [ "custom_styles" ]
+_sections_unfolded = [ "Popup", "custom_styles" ]
 
 [node name="ProgressBar" type="ProgressBar" parent="Loading" index="1"]
 

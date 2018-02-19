@@ -30,7 +30,7 @@ window/stretch/aspect="keep_height"
 
 [locale]
 
-locale_filter=[ 1, [ "en", "es", "ru", "th" ] ]
+locale_filter=[ 0, [ "en", "es", "ja", "ru", "th" ] ]
 translations=PoolStringArray( "res://idiomas.en.translation", "res://idiomas.es.translation", "res://idiomas.ru.translation", "res://idiomas.th.translation" )
 
 [rendering]

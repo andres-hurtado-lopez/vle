@@ -5,13 +5,13 @@ type="Translation"
 
 [deps]
 
-files=[ "res://idiomas.es.translation", "res://idiomas.en.translation", "res://idiomas.ru.translation", "res://idiomas.th.translation" ]
+files=[ "res://idiomas.es.translation", "res://idiomas.en.translation", "res://idiomas.ru.translation", "res://idiomas.th.translation", "res://idiomas.ja.translation" ]
 
 source_file="res://idiomas.csv"
-source_md5="f601e51a3773f25ba95b5e59ab8fd2f2"
+source_md5="e04da5e568e920ff974ed6e6fae05ce9"
 
-dest_files=[ "res://idiomas.es.translation", "res://idiomas.en.translation", "res://idiomas.ru.translation", "res://idiomas.th.translation" ]
-dest_md5="686269e592075b11e5f75c1f4d8e0ea1"
+dest_files=[ "res://idiomas.es.translation", "res://idiomas.en.translation", "res://idiomas.ru.translation", "res://idiomas.th.translation", "res://idiomas.ja.translation" ]
+dest_md5="4dafa82d783d25ac226a12165c7216c1"
 
 [params]
 

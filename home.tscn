@@ -9,13 +9,13 @@
 [ext_resource path="res://go_mecanico.anim" type="Animation" id=7]
 [ext_resource path="res://go_servicio.anim" type="Animation" id=8]
 [ext_resource path="res://go_tranporte.anim" type="Animation" id=9]
-[ext_resource path="res://transporte.png" type="Texture" id=10]
-[ext_resource path="res://mecanico.png" type="Texture" id=11]
-[ext_resource path="res://combustibles.png" type="Texture" id=12]
-[ext_resource path="res://actividades.png" type="Texture" id=13]
-[ext_resource path="res://descanso.png" type="Texture" id=14]
-[ext_resource path="res://mapa.png" type="Texture" id=15]
-[ext_resource path="res://MyriadBold25.tres" type="DynamicFont" id=16]
+[ext_resource path="res://MyriadBold25.tres" type="DynamicFont" id=10]
+[ext_resource path="res://transporte.png" type="Texture" id=11]
+[ext_resource path="res://mecanico.png" type="Texture" id=12]
+[ext_resource path="res://combustibles.png" type="Texture" id=13]
+[ext_resource path="res://actividades.png" type="Texture" id=14]
+[ext_resource path="res://descanso.png" type="Texture" id=15]
+[ext_resource path="res://mapa.png" type="Texture" id=16]
 [ext_resource path="res://MyriadBold60.tres" type="DynamicFont" id=17]
 [ext_resource path="res://MyriadBold150.tres" type="DynamicFont" id=18]
 [ext_resource path="res://tema_dialogo.tres" type="Theme" id=19]
@@ -542,13 +542,10 @@ blend_times = [  ]
 
 [node name="VPrincipal" type="ReferenceRect" parent="." index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -556,167 +553,16 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="transporte" type="TextureButton" parent="VPrincipal" index="0"]
+[node name="Panel" type="Panel" parent="VPrincipal" index="0"]
 
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 86.0
-margin_top = 59.0
-margin_right = 286.0
-margin_bottom = 259.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 10 )
-expand = true
-stretch_mode = 5
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="mecanico" type="TextureButton" parent="VPrincipal" index="1"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 396.0
-margin_top = 59.0
-margin_right = 596.0
-margin_bottom = 259.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 11 )
-expand = true
-stretch_mode = 5
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="combustible" type="TextureButton" parent="VPrincipal" index="2"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 686.0
-margin_top = 59.0
-margin_right = 886.0
-margin_bottom = 259.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 12 )
-expand = true
-stretch_mode = 5
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="actividades" type="TextureButton" parent="VPrincipal" index="3"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 86.0
-margin_top = 319.0
-margin_right = 286.0
-margin_bottom = 519.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 13 )
-expand = true
-stretch_mode = 5
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="descanso" type="TextureButton" parent="VPrincipal" index="4"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 396.0
-margin_top = 319.0
-margin_right = 596.0
-margin_bottom = 519.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 14 )
-expand = true
-stretch_mode = 5
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="gastos" type="TextureButton" parent="VPrincipal" index="5"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 686.0
-margin_top = 319.0
-margin_right = 886.0
-margin_bottom = 519.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 15 )
-expand = true
-stretch_mode = 5
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="Panel" type="Panel" parent="VPrincipal" index="6"]
-
+editor/display_folded = true
 material = SubResource( 11 )
-anchor_left = 0.0
+anchor_left = 1.0
 anchor_top = 0.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 848.0
-margin_top = 3.0
-margin_right = 978.0
-margin_bottom = 26.0
+anchor_bottom = 0.0
+margin_left = -169.0
+margin_bottom = 62.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 0
 mouse_default_cursor_shape = 0
@@ -749,159 +595,435 @@ _sections_unfolded = [ "Textures", "custom_styles" ]
 
 [node name="Label" type="Label" parent="VPrincipal/Panel/fin_turno" index="0"]
 
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -65.0
-margin_top = -12.5
-margin_right = 65.0
-margin_bottom = 12.5
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 10 )
 text = "END_SHIFT"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Label" type="Label" parent="VPrincipal" index="7"]
+[node name="VBtransporte" type="VBoxContainer" parent="VPrincipal" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 122.0
-margin_top = 271.0
-margin_right = 250.0
-margin_bottom = 296.0
+margin_left = -412.0
+margin_top = -208.0
+margin_right = -212.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="transporte" type="TextureButton" parent="VPrincipal/VBtransporte" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 11 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="Label" type="Label" parent="VPrincipal/VBtransporte" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 229.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "HAUL"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Label2" type="Label" parent="VPrincipal" index="8"]
+[node name="VBMecanico" type="VBoxContainer" parent="VPrincipal" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 442.0
-margin_top = 271.0
-margin_right = 557.0
-margin_bottom = 296.0
+margin_left = -112.0
+margin_top = -208.0
+margin_right = 88.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="mecanico" type="TextureButton" parent="VPrincipal/VBMecanico" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 12 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="Label2" type="Label" parent="VPrincipal/VBMecanico" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 229.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "FAIL"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Label3" type="Label" parent="VPrincipal" index="9"]
+[node name="VBcombustible" type="VBoxContainer" parent="VPrincipal" index="3"]
 
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 716.0
-margin_top = 271.0
-margin_right = 860.0
-margin_bottom = 296.0
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 700.0
+margin_top = 80.0
+margin_right = 900.0
+margin_bottom = 309.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="combustible" type="TextureButton" parent="VPrincipal/VBcombustible" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 13 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="Label3" type="Label" parent="VPrincipal/VBcombustible" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 229.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "FUEL"
+align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Label4" type="Label" parent="VPrincipal" index="10"]
+[node name="VBactividades" type="VBoxContainer" parent="VPrincipal" index="4"]
 
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 749.0
-margin_top = 528.0
-margin_right = 831.0
-margin_bottom = 553.0
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 100.0
+margin_top = 330.0
+margin_right = 300.0
+margin_bottom = 559.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="actividades" type="TextureButton" parent="VPrincipal/VBactividades" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 14 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="Label6" type="Label" parent="VPrincipal/VBactividades" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 229.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 16 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "EXPENSE"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label5" type="Label" parent="VPrincipal" index="11"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 445.0
-margin_top = 528.0
-margin_right = 554.0
-margin_bottom = 553.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 16 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "REST"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label6" type="Label" parent="VPrincipal" index="12"]
-
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 135.0
-margin_top = 528.0
-margin_right = 244.0
-margin_bottom = 553.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = ExtResource( 16 )
+custom_fonts/font = ExtResource( 10 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 text = "ACTIVITY"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="VBdescanso" type="VBoxContainer" parent="VPrincipal" index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 400.0
+margin_top = 330.0
+margin_right = 600.0
+margin_bottom = 559.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="descanso" type="TextureButton" parent="VPrincipal/VBdescanso" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 15 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="Label5" type="Label" parent="VPrincipal/VBdescanso" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 229.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "REST"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VPrincipal" index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 700.0
+margin_top = 330.0
+margin_right = 900.0
+margin_bottom = 559.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Rect" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="gastos" type="TextureButton" parent="VPrincipal/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 16 )
+expand = true
+stretch_mode = 5
+_sections_unfolded = [ "Rect", "Textures" ]
+
+[node name="Label4" type="Label" parent="VPrincipal/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 204.0
+margin_right = 200.0
+margin_bottom = 229.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 10 )
+custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+text = "EXPENSE"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -2655,19 +2777,19 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[connection signal="pressed" from="VPrincipal/transporte" to="." method="_on_transporte_pressed"]
-
-[connection signal="pressed" from="VPrincipal/mecanico" to="." method="_on_mecanico_pressed"]
-
-[connection signal="pressed" from="VPrincipal/combustible" to="." method="_on_combustible_pressed"]
-
-[connection signal="pressed" from="VPrincipal/actividades" to="." method="_on_actividades_pressed"]
-
-[connection signal="pressed" from="VPrincipal/descanso" to="." method="_on_descanso_pressed"]
-
-[connection signal="pressed" from="VPrincipal/gastos" to="." method="_on_gastos_pressed"]
-
 [connection signal="pressed" from="VPrincipal/Panel/fin_turno" to="." method="_on_fin_turno_pressed"]
+
+[connection signal="pressed" from="VPrincipal/VBtransporte/transporte" to="." method="_on_transporte_pressed"]
+
+[connection signal="pressed" from="VPrincipal/VBMecanico/mecanico" to="." method="_on_mecanico_pressed"]
+
+[connection signal="pressed" from="VPrincipal/VBcombustible/combustible" to="." method="_on_combustible_pressed"]
+
+[connection signal="pressed" from="VPrincipal/VBactividades/actividades" to="." method="_on_actividades_pressed"]
+
+[connection signal="pressed" from="VPrincipal/VBdescanso/descanso" to="." method="_on_descanso_pressed"]
+
+[connection signal="pressed" from="VPrincipal/VBoxContainer/gastos" to="." method="_on_gastos_pressed"]
 
 [connection signal="pressed" from="VTransporte/detener_transporte" to="." method="_on_detener_transporte_pressed"]
 
