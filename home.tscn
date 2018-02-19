@@ -194,14 +194,7 @@ tracks/0/keys = {
 "values": [ Vector2( 1200, 0 ), Vector2( 2400, 0 ) ]
 }
 
-[sub_resource type="StyleBoxEmpty" id=10]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-
-[sub_resource type="Shader" id=11]
+[sub_resource type="Shader" id=10]
 
 code = "shader_type canvas_item;
 
@@ -213,10 +206,17 @@ void fragment() {
     COLOR = mix(start,end,mpt);
 }"
 
-[sub_resource type="ShaderMaterial" id=12]
+[sub_resource type="ShaderMaterial" id=11]
 
 render_priority = 0
-shader = SubResource( 11 )
+shader = SubResource( 10 )
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+content_margin_left = -1.0
+content_margin_right = -1.0
+content_margin_top = -1.0
+content_margin_bottom = -1.0
 
 [sub_resource type="Shader" id=13]
 
@@ -542,6 +542,7 @@ blend_times = [  ]
 
 [node name="VPrincipal" type="ReferenceRect" parent="." index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -705,23 +706,39 @@ expand = true
 stretch_mode = 5
 _sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="fin_turno" type="Button" parent="VPrincipal" index="6"]
+[node name="Panel" type="Panel" parent="VPrincipal" index="6"]
+
+material = SubResource( 11 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 848.0
+margin_top = 3.0
+margin_right = 978.0
+margin_bottom = 26.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Material", "custom_styles" ]
+
+[node name="fin_turno" type="Button" parent="VPrincipal/Panel" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 848.0
-margin_top = 3.0
-margin_right = 1012.0
-margin_bottom = 74.0
+margin_right = 164.0
+margin_bottom = 71.0
 rect_pivot_offset = Vector2( 0, 0 )
 focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_styles/normal = SubResource( 10 )
+custom_styles/normal = SubResource( 12 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -730,29 +747,15 @@ flat = false
 align = 1
 _sections_unfolded = [ "Textures", "custom_styles" ]
 
-[node name="Panel" type="Panel" parent="VPrincipal/fin_turno" index="0"]
-
-material = SubResource( 12 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Material", "custom_styles" ]
-
-[node name="Label" type="Label" parent="VPrincipal/fin_turno" index="1"]
+[node name="Label" type="Label" parent="VPrincipal/Panel/fin_turno" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -54.0
+margin_left = -65.0
 margin_top = -12.5
-margin_right = 54.0
+margin_right = 65.0
 margin_bottom = 12.5
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
@@ -760,7 +763,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 16 )
-text = "Fin Turno"
+text = "END_SHIFT"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -783,7 +786,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Transporte"
+text = "HAUL"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -806,7 +809,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Mecánico"
+text = "FAIL"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -829,7 +832,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Combustible"
+text = "FUEL"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -852,7 +855,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Gastos"
+text = "EXPENSE"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -875,7 +878,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Descanso"
+text = "REST"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -898,7 +901,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 16 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Actividad"
+text = "ACTIVITY"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -936,7 +939,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Transporte"
+text = "HAUL"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1009,7 +1012,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 19 )
 custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
-text = "Detener"
+text = "STOP"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -1058,7 +1061,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Tiempo Espera"
+text = "WAIT_TIME"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1135,7 +1138,7 @@ toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
 group = ExtResource( 21 )
-text = "Varada Llanta"
+text = "FAIL_TIRE"
 flat = false
 align = 1
 _sections_unfolded = [ "Theme", "custom_styles" ]
@@ -1161,7 +1164,7 @@ toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
 group = ExtResource( 21 )
-text = "Varada Mecánica"
+text = "FAIL_MECH"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
@@ -1187,7 +1190,7 @@ toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
 group = ExtResource( 21 )
-text = "Varada Eléctrica"
+text = "FAIL_ELEC"
 flat = false
 align = 1
 _sections_unfolded = [ "Theme", "custom_styles" ]
@@ -1216,7 +1219,7 @@ toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
 group = ExtResource( 21 )
-text = "Varada Hidráulica"
+text = "FAIL_HYDR"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect", "Theme", "custom_styles" ]
@@ -1246,7 +1249,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Regresar"
+text = "BACK"
 flat = false
 align = 1
 _sections_unfolded = [ "Theme", "custom_colors", "custom_styles" ]
@@ -1296,7 +1299,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 19 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Llegada Mecánico"
+text = "SERVICE_START"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -1338,7 +1341,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Servicio"
+text = "SERVICE"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1413,7 +1416,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 19 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Detener"
+text = "STOP"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -1469,7 +1472,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Carga Combustible"
+text = "REFUELING"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1493,7 +1496,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Cantidad"
+text = "QTY"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1573,7 +1576,7 @@ toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
 group = ExtResource( 25 )
-text = "Tanqueo Patio"
+text = "WS_REFUEL"
 flat = false
 align = 1
 _sections_unfolded = [ "Theme", "custom_styles" ]
@@ -1602,7 +1605,7 @@ toggle_mode = true
 enabled_focus_mode = 0
 shortcut = null
 group = ExtResource( 25 )
-text = "Tanqueo Campo"
+text = "FLD_REFUEL"
 flat = false
 clip_text = true
 align = 1
@@ -1674,7 +1677,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 19 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Fin Tanqueo"
+text = "REFUEL_END"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -1723,7 +1726,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Descanso"
+text = "REST"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1801,7 +1804,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 19 )
 custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
-text = "Detener"
+text = "STOP"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -1860,7 +1863,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 144.0
+margin_right = 163.0
 margin_bottom = 60.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
@@ -1869,7 +1872,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Valor"
+text = "AMNT"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1882,8 +1885,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 148.0
-margin_right = 448.0
+margin_left = 167.0
+margin_right = 467.0
 margin_bottom = 61.0
 rect_min_size = Vector2( 300, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -1920,7 +1923,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Gastos"
+text = "EXPENSE"
 align = 1
 percent_visible = 1.0
 lines_skipped = 0
@@ -1952,7 +1955,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Regresar"
+text = "BACK"
 flat = false
 align = 1
 _sections_unfolded = [ "Theme", "custom_colors", "custom_styles" ]
@@ -2003,7 +2006,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 theme = ExtResource( 19 )
 custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
-text = "Registrar"
+text = "RECORD"
 align = 1
 valign = 1
 percent_visible = 1.0
@@ -2017,7 +2020,7 @@ margin_left = -300.0
 margin_top = -130.5
 margin_right = 304.0
 margin_bottom = -44.5
-view_label = "Concepto"
+view_label = "EXPENSE_REASON"
 
 [node name="VActvidad" type="ReferenceRect" parent="." index="10"]
 
@@ -2061,7 +2064,7 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Regresar"
+text = "BACK"
 flat = false
 align = 1
 _sections_unfolded = [ "Theme", "custom_colors", "custom_styles" ]
@@ -2087,7 +2090,7 @@ custom_fonts/font = ExtResource( 28 )
 custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
 focus_mode = 2
 context_menu_enabled = true
-placeholder_text = "buscar actividad u orden"
+placeholder_text = "SEARCH_ACT_PH"
 placeholder_alpha = 0.6
 caret_blink = false
 caret_blink_speed = 0.65
@@ -2133,7 +2136,6 @@ columns = 2
 
 [node name="PActividad" type="Panel" parent="VActvidad/ScrollContainer/GridContainer" index="0"]
 
-editor/display_folded = true
 material = SubResource( 24 )
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2156,13 +2158,14 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_bottom = 10.0
 rect_pivot_offset = Vector2( 0, 0 )
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
-text = "Actividad"
+text = "ACTIVITY"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -2170,7 +2173,6 @@ _sections_unfolded = [ "Material", "custom_colors", "custom_fonts" ]
 
 [node name="POrden" type="Panel" parent="VActvidad/ScrollContainer/GridContainer" index="1"]
 
-editor/display_folded = true
 material = SubResource( 27 )
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2199,7 +2201,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
-text = "Orden"
+text = "WO"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -2634,7 +2636,7 @@ margin_left = -469.0
 margin_top = -201.5
 margin_right = 135.0
 margin_bottom = -115.5
-view_label = "Lote"
+view_label = "TERRAIN"
 
 [node name="VDatosActividad" type="ReferenceRect" parent="." index="11"]
 
@@ -2665,7 +2667,7 @@ _sections_unfolded = [ "Rect" ]
 
 [connection signal="pressed" from="VPrincipal/gastos" to="." method="_on_gastos_pressed"]
 
-[connection signal="pressed" from="VPrincipal/fin_turno" to="." method="_on_fin_turno_pressed"]
+[connection signal="pressed" from="VPrincipal/Panel/fin_turno" to="." method="_on_fin_turno_pressed"]
 
 [connection signal="pressed" from="VTransporte/detener_transporte" to="." method="_on_detener_transporte_pressed"]
 
