@@ -6,6 +6,7 @@ var contador_mecanico;
 var contador_servicio;
 var contador_combustible;
 var contador_descanso;
+var contador_actividad;
 
 # class member variables go here, for example:
 # var a = 2
@@ -13,8 +14,11 @@ var contador_descanso;
 
 func _ready():
     db = get_node('/root/db')
+    global = get_node('/root/global')
     $VGastos/concepto_gasto.populate(['Peaje','Combustible'])
-
+    $VActvidad/herramienta.populate(db.read_key('herramientas'))
+    $VActvidad/actividad.populate(db.read_key('actividades'))
+    $VActvidad/terreno.populate(db.read_key('terrenos'))
 #func _process(delta):
 #    # Called every frame. Delta is time since last frame.
 #    # Update game logic here.
@@ -48,8 +52,9 @@ func _on_combustible_pressed():
 
 
 func _on_actividades_pressed():
+    contador_actividad = 0
+    $VActvidad/timer_actividad.start()
     $MoveScreens.play("go_actividad")
-    pass
 
 
 func _on_descanso_pressed():
@@ -154,4 +159,21 @@ func _on_timer_descanso_timeout():
 
 
 func _on_regresar_actividad_pressed():
+    $VActvidad/timer_actividad.stop()
+    $VActvidad/tiempo_actividad.text = '00:00:00'
     $MoveScreens.play('back_actividad')
+
+
+func _on_detener_actividad_pressed():
+    $VActvidad/timer_actividad.stop()
+    $VActvidad/tiempo_actividad.text = '00:00:00'
+    $MoveScreens.play('back_actividad')
+
+
+func _on_timer_actividad_timeout():
+    contador_actividad += 1
+    var horas = floor(contador_actividad/3600);
+    var minutos = floor((contador_actividad % 3600 ) / 60);
+    var segundos = (contador_actividad % 3600 ) % 60;
+    $VActvidad/tiempo_actividad.text = String(horas).pad_zeros(2)+":"+String(minutos).pad_zeros(2)+":"+String(segundos).pad_zeros(2)
+

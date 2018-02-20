@@ -13,6 +13,7 @@ func _ready():
 
     $Origen.populate(ubicaciones)
     $Destino.populate(ubicaciones)
+    $Actividad.populate(db.read_key('actividades'))
 
 
 

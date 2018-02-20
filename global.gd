@@ -8,13 +8,30 @@ var sess_type =""
 var lang = ""
 var ril = null
 
+var http_errors = {
+            HTTPRequest.RESULT_CHUNKED_BODY_SIZE_MISMATCH : "RESULT_CHUNKED_BODY_SIZE_MISMATCH",
+            HTTPRequest.RESULT_CANT_CONNECT : "RESULT_CANT_CONNECT",
+            HTTPRequest.RESULT_CANT_RESOLVE : "RESULT_CANT_RESOLVE",
+            HTTPRequest.RESULT_CONNECTION_ERROR : "RESULT_CONNECTION_ERROR",
+            HTTPRequest.RESULT_SSL_HANDSHAKE_ERROR : "RESULT_SSL_HANDSHAKE_ERROR",
+            HTTPRequest.RESULT_NO_RESPONSE : "RESULT_NO_RESPONSE",
+            HTTPRequest.RESULT_BODY_SIZE_LIMIT_EXCEEDED : "RESULT_BODY_SIZE_LIMIT_EXCEEDED",
+            HTTPRequest.RESULT_REQUEST_FAILED : "RESULT_REQUEST_FAILED",
+            HTTPRequest.RESULT_DOWNLOAD_FILE_CANT_OPEN : "RESULT_DOWNLOAD_FILE_CANT_OPEN",
+            HTTPRequest.RESULT_DOWNLOAD_FILE_WRITE_ERROR : "RESULT_DOWNLOAD_FILE_WRITE_ERROR",
+            HTTPRequest.RESULT_REDIRECT_LIMIT_REACHED : "RESULT_REDIRECT_LIMIT_REACHED",
+   }
+
 func _ready():
 
     TranslationServer.set_locale(OS.get_locale().left(2))
+    #TranslationServer.set_locale('es')
 
     global = get_node('/root/global')
     db.write_key('ubicaciones', ['Pereira','Chinchina','Buenaventura'])
-
+    db.write_key('actividades', ['Tilling','Plowing','Spraying','Planting','Harvesting'])
+    db.write_key('herramientas', ['Till','Plow','Sprayer A','Sprayer B','Tray'])
+    db.write_key('terrenos', ['AB023','AB393','AA3233','FA2333','AM3233'])
 
     var config = ConfigFile.new()
     var err = config.load('user://settings.cfg')

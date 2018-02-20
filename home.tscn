@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://home.gd" type="Script" id=1]
 [ext_resource path="res://back_servicio.tres" type="Animation" id=2]
@@ -26,8 +26,6 @@
 [ext_resource path="res://VDestino.tscn" type="PackedScene" id=24]
 [ext_resource path="res://grupo_combustible.tres" type="ButtonGroup" id=25]
 [ext_resource path="res://dropdown.tscn" type="PackedScene" id=26]
-[ext_resource path="res://lineedit.stylebox" type="StyleBox" id=27]
-[ext_resource path="res://MyriadRegular60.tres" type="DynamicFont" id=28]
 
 [sub_resource type="Animation" id=1]
 
@@ -420,70 +418,6 @@ anti_aliasing = true
 anti_aliasing_size = 1
 _sections_unfolded = [ "Border", "Border Width" ]
 
-[sub_resource type="Shader" id=23]
-
-code = "shader_type canvas_item;
-
-void fragment() {
-    vec4 start = vec4(0.50,0.91,0.0,1.0);
-    vec4 end = vec4(0.0, 0.73, 0.0,1.0);
-    float mpt = (1.0 - UV.y);
-    COLOR = mix(start,end,mpt);
-}"
-
-[sub_resource type="ShaderMaterial" id=24]
-
-render_priority = 0
-shader = SubResource( 23 )
-
-[sub_resource type="ShaderMaterial" id=25]
-
-render_priority = 0
-
-[sub_resource type="Shader" id=26]
-
-code = "shader_type canvas_item;
-
-void fragment() {
-    vec4 start = vec4(0.50,0.91,0.0,1.0);
-    vec4 end = vec4(0.0, 0.73, 0.0,1.0);
-    float mpt = (1.0 - UV.y);
-    COLOR = mix(start,end,mpt);
-}"
-
-[sub_resource type="ShaderMaterial" id=27]
-
-render_priority = 0
-shader = SubResource( 26 )
-
-[sub_resource type="StyleBoxFlat" id=28]
-
-content_margin_left = -1.0
-content_margin_right = -1.0
-content_margin_top = -1.0
-content_margin_bottom = -1.0
-bg_color = Color( 0.956863, 0.956863, 0.956863, 1 )
-draw_center = true
-border_width_left = 0
-border_width_top = 0
-border_width_right = 0
-border_width_bottom = 0
-border_color = Color( 0.8, 0.8, 0.8, 1 )
-border_blend = false
-corner_radius_top_left = 0
-corner_radius_top_right = 0
-corner_radius_bottom_right = 0
-corner_radius_bottom_left = 0
-corner_detail = 8
-expand_margin_left = 0.0
-expand_margin_right = 0.0
-expand_margin_top = 0.0
-expand_margin_bottom = 0.0
-shadow_color = Color( 0, 0, 0, 0.6 )
-shadow_size = 0
-anti_aliasing = true
-anti_aliasing_size = 1
-
 [node name="home" type="Node" index="0"]
 
 script = ExtResource( 1 )
@@ -542,6 +476,7 @@ blend_times = [  ]
 
 [node name="VPrincipal" type="ReferenceRect" parent="." index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -1047,7 +982,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="VTransporte" type="ReferenceRect" parent="." index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1233,6 +1167,7 @@ _sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="VMecanico" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -2162,7 +2097,6 @@ view_label = "EXPENSE_REASON"
 
 [node name="VActvidad" type="ReferenceRect" parent="." index="10"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -2178,7 +2112,29 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="regresar_actividad" type="Button" parent="VActvidad" index="0"]
+[node name="tiempo_actividad" type="Label" parent="VActvidad" index="0"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -150.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0, 0.572549, 0.278431, 1 )
+text = "00:00:00"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
+
+[node name="regresar_actividad" type="Button" parent="VActvidad" index="1"]
 
 anchor_left = 0.5
 anchor_top = 0.5
@@ -2208,127 +2164,33 @@ flat = false
 align = 1
 _sections_unfolded = [ "Theme", "custom_colors", "custom_styles" ]
 
-[node name="buscar_actividad" type="LineEdit" parent="VActvidad" index="1"]
+[node name="detener_actividad" type="Button" parent="VActvidad" index="2"]
 
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -467.0
-margin_top = -99.5
-margin_right = 464.0
-margin_bottom = -25.5
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_styles/normal = ExtResource( 27 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-focus_mode = 2
-context_menu_enabled = true
-placeholder_text = "SEARCH_ACT_PH"
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "Placeholder", "custom_colors", "custom_fonts" ]
-
-[node name="ScrollContainer" type="ScrollContainer" parent="VActvidad" index="2"]
-
+material = SubResource( 14 )
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 5.0
-margin_top = -300.0
-margin_right = -5.0
-margin_bottom = -5.0
+margin_left = 717.0
+margin_top = -471.0
+margin_right = -57.0
+margin_bottom = -222.0
 rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
+focus_mode = 2
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-scroll_horizontal_enabled = true
-scroll_horizontal = 0
-scroll_vertical_enabled = true
-scroll_vertical = 0
-_sections_unfolded = [ "Margin" ]
-
-[node name="GridContainer" type="GridContainer" parent="VActvidad/ScrollContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 1028.0
-margin_bottom = 626.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-columns = 2
-
-[node name="PActividad" type="Panel" parent="VActvidad/ScrollContainer/GridContainer" index="0"]
-
-material = SubResource( 24 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 512.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 512, 0 )
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Material", "Rect", "custom_styles" ]
-
-[node name="Label" type="Label" parent="VActvidad/ScrollContainer/GridContainer/PActividad" index="0"]
-
-material = SubResource( 25 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_bottom = 10.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = ExtResource( 17 )
-text = "ACTIVITY"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Material", "custom_colors", "custom_fonts" ]
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 1
+_sections_unfolded = [ "Material", "custom_fonts", "custom_styles" ]
 
-[node name="POrden" type="Panel" parent="VActvidad/ScrollContainer/GridContainer" index="1"]
-
-material = SubResource( 27 )
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 516.0
-margin_right = 1028.0
-margin_bottom = 50.0
-rect_min_size = Vector2( 512, 50 )
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Material", "Rect", "custom_styles" ]
-
-[node name="Label" type="Label" parent="VActvidad/ScrollContainer/GridContainer/POrden" index="0"]
+[node name="Label" type="Label" parent="VActvidad/detener_actividad" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -2339,460 +2201,46 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 17 )
-text = "WO"
+theme = ExtResource( 19 )
+custom_colors/font_color = Color( 0.956863, 0.956863, 0.956863, 1 )
+text = "STOP"
+align = 1
+valign = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Material", "custom_colors", "custom_fonts" ]
+_sections_unfolded = [ "Material", "Theme", "custom_colors" ]
 
-[node name="Label2" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="2"]
+[node name="herramienta" parent="VActvidad" index="3" instance=ExtResource( 26 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 54.0
-margin_right = 512.0
-margin_bottom = 114.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "Arado Mecanico"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+margin_left = -469.0
+margin_top = 33.5
+margin_right = 135.0
+margin_bottom = 119.5
+view_label = "TOOL"
 
-[node name="Label3" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="3"]
+[node name="terreno" parent="VActvidad" index="4" instance=ExtResource( 26 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 516.0
-margin_top = 54.0
-margin_right = 1028.0
-margin_bottom = 114.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
+margin_left = -469.0
+margin_top = -87.5
+margin_right = 135.0
+margin_bottom = -1.5
+view_label = "TERRAIN"
 
-[node name="Label4" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 118.0
-margin_right = 512.0
-margin_bottom = 178.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label5" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 516.0
-margin_top = 118.0
-margin_right = 1028.0
-margin_bottom = 178.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label6" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 182.0
-margin_right = 512.0
-margin_bottom = 242.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label7" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 516.0
-margin_top = 182.0
-margin_right = 1028.0
-margin_bottom = 242.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label8" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 246.0
-margin_right = 512.0
-margin_bottom = 306.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label9" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="9"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 516.0
-margin_top = 246.0
-margin_right = 1028.0
-margin_bottom = 306.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label10" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="10"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 310.0
-margin_right = 512.0
-margin_bottom = 370.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label11" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="11"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 516.0
-margin_top = 310.0
-margin_right = 1028.0
-margin_bottom = 370.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label12" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="12"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 374.0
-margin_right = 512.0
-margin_bottom = 434.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label13" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="13"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 516.0
-margin_top = 374.0
-margin_right = 1028.0
-margin_bottom = 434.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label14" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="14"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 438.0
-margin_right = 512.0
-margin_bottom = 498.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label15" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="15"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 516.0
-margin_top = 438.0
-margin_right = 1028.0
-margin_bottom = 498.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label16" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="16"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 502.0
-margin_right = 512.0
-margin_bottom = 562.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label17" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="17"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 516.0
-margin_top = 502.0
-margin_right = 1028.0
-margin_bottom = 562.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label18" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="18"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 566.0
-margin_right = 512.0
-margin_bottom = 626.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="Label19" type="Label" parent="VActvidad/ScrollContainer/GridContainer" index="19"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 516.0
-margin_top = 566.0
-margin_right = 1028.0
-margin_bottom = 626.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_styles/normal = SubResource( 28 )
-custom_fonts/font = ExtResource( 28 )
-custom_colors/font_color = Color( 0.301961, 0.301961, 0.301961, 1 )
-text = "345235"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_colors", "custom_fonts", "custom_styles" ]
-
-[node name="dropdown" parent="VActvidad" index="3" instance=ExtResource( 26 )]
+[node name="actividad" parent="VActvidad" index="5" instance=ExtResource( 26 )]
 
 margin_left = -469.0
 margin_top = -201.5
 margin_right = 135.0
 margin_bottom = -115.5
-view_label = "TERRAIN"
+view_label = "ACTIVITY_DROP"
 
-[node name="VDatosActividad" type="ReferenceRect" parent="." index="11"]
+[node name="timer_actividad" type="Timer" parent="VActvidad" index="6"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 2400.0
-margin_top = 680.0
-margin_right = 3424.0
-margin_bottom = 1277.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
 
 [connection signal="pressed" from="VPrincipal/VPGrid/VBtransporte/transporte" to="." method="_on_transporte_pressed"]
 
@@ -2835,5 +2283,9 @@ _sections_unfolded = [ "Rect" ]
 [connection signal="pressed" from="VGastos/registrar_gasto" to="." method="_on_registrar_gasto_pressed"]
 
 [connection signal="pressed" from="VActvidad/regresar_actividad" to="." method="_on_regresar_actividad_pressed"]
+
+[connection signal="pressed" from="VActvidad/detener_actividad" to="." method="_on_detener_actividad_pressed"]
+
+[connection signal="timeout" from="VActvidad/timer_actividad" to="." method="_on_timer_actividad_timeout"]
 
 

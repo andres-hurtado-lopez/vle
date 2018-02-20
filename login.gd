@@ -56,30 +56,7 @@ func _on_RequestLogin_request_completed( result, response_code, headers, body ):
         $IncorrectUserPassword.popup()
     else:
         $Loading.hide()
-        match result:
-            HTTPRequest.RESULT_CHUNKED_BODY_SIZE_MISMATCH:
-                $Error/message.text = "RESULT_CHUNKED_BODY_SIZE_MISMATCH"
-            HTTPRequest.RESULT_CANT_CONNECT:
-                $Error/message.text = "Request failed while connecting."
-            HTTPRequest.RESULT_CANT_RESOLVE:
-                $Error/message.text = "Request failed while resolving."
-            HTTPRequest.RESULT_CONNECTION_ERROR:
-                $Error/message.text = "Request failed due to connection(read/write) error."
-            HTTPRequest.RESULT_SSL_HANDSHAKE_ERROR:
-                $Error/message.text = "Request failed on SSL handshake."
-            HTTPRequest.RESULT_NO_RESPONSE:
-                $Error/message.text = "Request does not have a response(yet)."
-            HTTPRequest.RESULT_BODY_SIZE_LIMIT_EXCEEDED:
-                $Error/message.text = "Request exceeded its maximum size limit, see set_body_size_limit()."
-            HTTPRequest.RESULT_REQUEST_FAILED:
-                $Error/message.text = "Request failed. (Unused)"
-            HTTPRequest.RESULT_DOWNLOAD_FILE_CANT_OPEN:
-                $Error/message.text = "HTTPRequest couldn't open the download file."
-            HTTPRequest.RESULT_DOWNLOAD_FILE_WRITE_ERROR:
-                $Error/message.text = "HTTPRequest couldn't write to the download file."
-            HTTPRequest.RESULT_REDIRECT_LIMIT_REACHED:
-                $Error/message.text = "Request reached its maximum redirect limit, see set_max_redirects()."
-
+        $Error/message.text = tr(global.http_errors[result])
         $Error.popup()
 
 

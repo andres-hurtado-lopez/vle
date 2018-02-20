@@ -8,10 +8,10 @@ type="Translation"
 files=[ "res://idiomas.es.translation", "res://idiomas.en.translation", "res://idiomas.ru.translation", "res://idiomas.th.translation", "res://idiomas.ja.translation" ]
 
 source_file="res://idiomas.csv"
-source_md5="cdbe320762d450c056129445fbd34728"
+source_md5="31673ed61ad3281e9cf1677c453dd540"
 
 dest_files=[ "res://idiomas.es.translation", "res://idiomas.en.translation", "res://idiomas.ru.translation", "res://idiomas.th.translation", "res://idiomas.ja.translation" ]
-dest_md5="67fb1da2208e30a9c95fe87bae9db4eb"
+dest_md5="c22ac1fd60cbda62b209537e843f006f"
 
 [params]
 

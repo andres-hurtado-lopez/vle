@@ -120,7 +120,7 @@ use_filter = true
 font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -414,6 +414,7 @@ custom_fonts/font = ExtResource( 6 )
 custom_colors/font_color = Color( 0.407843, 0.407843, 0.407843, 1 )
 align = 1
 valign = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
